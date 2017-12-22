@@ -61,7 +61,7 @@ class TakePhotoActivity : AppCompatActivity() {
 
             }
             else -> {
-                Toast.makeText(this, "Undefined request code", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Undefined request code", Toast.LENGTH_SHORT).show()
             }
         }
     }

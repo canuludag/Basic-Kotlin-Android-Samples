@@ -1,5 +1,7 @@
 <resources>
-    <string name="app_name">KotlinCameraSampleApp</string>
+    <string name="app_name">Kotlin Android Samples</string>
     <string name="photo_viewer">Photo Viewer</string>
     <string name="start_camera_app">Start Camera App</string>
+    <string name="take_photo">Take Photo Sample</string>
+    <string name="record_video">Record Video Sample</string>
 </resources>

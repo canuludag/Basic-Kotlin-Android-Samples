@@ -9,6 +9,7 @@ import android.os.Environment
 import android.provider.MediaStore
 import android.support.v4.content.FileProvider
 import android.support.v7.app.AppCompatActivity
+import android.view.MenuItem
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_take_photo.*
 import java.io.File
@@ -24,6 +25,9 @@ class TakePhotoActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_take_photo)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setHomeButtonEnabled(true)
+        supportActionBar?.title = "Take Photo"
 
         // Definition handled with Kotlin Extensions
         cameraButton.setOnClickListener {
@@ -95,5 +99,15 @@ class TakePhotoActivity : AppCompatActivity() {
 
         return BitmapFactory.decodeFile(imageFilePath, bmOptions)
 
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        when (item?.itemId) {
+            android.R.id.home -> {
+                finish()
+                return true
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 }

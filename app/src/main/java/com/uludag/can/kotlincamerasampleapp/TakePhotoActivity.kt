@@ -25,9 +25,7 @@ class TakePhotoActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_take_photo)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        supportActionBar?.setHomeButtonEnabled(true)
-        supportActionBar?.title = "Take Photo"
+        setupSupportActionbar()
 
         // Definition handled with Kotlin Extensions
         cameraButton.setOnClickListener {
@@ -46,6 +44,12 @@ class TakePhotoActivity : AppCompatActivity() {
             }
 
         }
+    }
+
+    private fun setupSupportActionbar() {
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setHomeButtonEnabled(true)
+        supportActionBar?.title = "Take Photo"
     }
 
     // Returning from the camera intent

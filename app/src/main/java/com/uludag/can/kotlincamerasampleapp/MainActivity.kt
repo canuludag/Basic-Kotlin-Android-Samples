@@ -13,6 +13,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener{
         setContentView(R.layout.activity_main)
         btnStartTakePhotoActivity.setOnClickListener(this)
         btnStartRecordVideoActivity.setOnClickListener(this)
+        btnStartWebViewExample.setOnClickListener(this)
 
     }
 
@@ -24,6 +25,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener{
             }
             R.id.btnStartRecordVideoActivity -> {
                 val intent = Intent(this, RecordVideoActivity::class.java)
+                startActivity(intent)
+            }
+            R.id.btnStartWebViewExample -> {
+                val intent = Intent(this, WebViewExampleActivity::class.java)
                 startActivity(intent)
             }
         }

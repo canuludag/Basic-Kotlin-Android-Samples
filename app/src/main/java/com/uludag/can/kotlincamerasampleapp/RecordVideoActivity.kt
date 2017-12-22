@@ -17,9 +17,7 @@ class RecordVideoActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_record_video)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        supportActionBar?.setHomeButtonEnabled(true)
-        supportActionBar?.title = "Record Video"
+        setupSupportActionbar()
 
         videoButton.setOnClickListener {
             callVideoApp()
@@ -31,8 +29,14 @@ class RecordVideoActivity : AppCompatActivity() {
 
     }
 
+    private fun setupSupportActionbar() {
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setHomeButtonEnabled(true)
+        supportActionBar?.title = "Record Video"
+    }
+
     // Starts video intent
-    fun callVideoApp() {
+    private fun callVideoApp() {
         val videoIntent = Intent(MediaStore.ACTION_VIDEO_CAPTURE)
         if (videoIntent.resolveActivity(packageManager) != null) {
             startActivityForResult(videoIntent, requestVideoAppRequestCode)
